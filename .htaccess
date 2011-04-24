@@ -1,0 +1,15 @@
+# Security
+ServerSignature Off
+
+# Default Pages
+DirectoryIndex index.html index.php
+
+# Options
+Options +Includes +ExecCGI -Indexes
+AddHandler server-parsed .html
+AddType 'text/html; charset=UTF-8' html
+
+RewriteEngine on
+
+# For archives.scovetta.com
+RewriteRule ^families/([a-zA-Z0-9_\-]+)\/([^\/]+)$ http://www.scovetta.com/xmas-public/$2?group_name=$1 [R]
